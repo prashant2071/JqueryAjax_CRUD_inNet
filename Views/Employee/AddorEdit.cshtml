@@ -1,0 +1,51 @@
+﻿@model DatatablesAjaxJqueryInsertUpdate.Models.tblEmployee
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("AddorEdit", "Employee", FormMethod.Post, new { onsubmit = "return SubmitForm(this)" }))
+{
+    @Html.HiddenFor(model => model.EmployeeId)
+    <div class="form-group row">
+        @Html.LabelFor(model => model.Name, new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+        </div>
+        @Html.ValidationMessageFor(model => model.Name)
+    </div>
+    <div class="form-group row">
+        @Html.LabelFor(model => model.Position, new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Position, new { @class = "form-control" })
+        </div>
+        @Html.ValidationMessageFor(model => model.Position)
+    </div>
+    <div class="form-group row">
+        @Html.LabelFor(model => model.Office, new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Office, new { @class = "form-control" })
+            </div>
+        @Html.ValidationMessageFor(model => model.Office)
+    </div>
+
+<div class="form-group row">
+    @Html.LabelFor(model => model.Age, new { @class = "col-sm-2 col-form-label" })
+    <div class="col-sm-10">
+        @Html.TextBoxFor(model => model.Age, new { @class = "form-control" })
+    </div>
+    @Html.ValidationMessageFor(model => model.Age)
+</div>
+<div class="form-group row">
+    @Html.LabelFor(model => model.Salary, new { @class = "col-sm-2 col-form-label" })
+  
+    <div class="col-sm-10">
+        @Html.TextBoxFor(model => model.Salary, new { @class = "form-control" })
+    </div>
+        @Html.ValidationMessageFor(model => model.Salary)
+    </div>
+
+<div class="form-group">
+    <input type="submit" value="Submit" class="btn btn-primary" />
+    <input type="reset" value="Reset" class="btn" />
+</div>
+}
